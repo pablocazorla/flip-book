@@ -1,4 +1,5 @@
-var sketchbook = {
+pc = {};
+pc.sketchbook = {
 	init : function(){
 		$('.sketchbook').each(function(){
 			var $this = $(this),
@@ -114,4 +115,4 @@ var sketchbook = {
 		});
 	}
 };
-$('document').ready(sketchbook.init());
+$('document').ready(pc.sketchbook.init());

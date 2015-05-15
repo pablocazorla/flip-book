@@ -7,33 +7,30 @@ h1{
 	font: 30px/50px Arial, Helvetica, sans-serif;margin-bottom:15px;
 }
 .container{
-	margin:100px auto;max-width: 1300px;
+	padding: 100px 30px;
 }
 
 /* Setup */
-.sketchbook{position: relative;width: 100%;height: 550px;background:#DDD;font-size: 60px;line-height: 120px;perspective: 2000px}
-.sketchbook .sk-page{position: absolute;top:0;left:50%;width: 50%;height: 550px;z-index: 40;
-	-webkit-transform-origin:0 0;
-	   -moz-transform-origin:0 0;
-			transform-origin:0 0;
+.sketchbook-fold{position: relative;max-width: 1268px;margin:0 auto 25px}
+.sketchbook-fold-bg{position: relative;width:100% !important;height:auto !important;display: block}
+.sketchbook{position: absolute;z-index: 39;top:1.6%;left:1%;right:1%;bottom:1.6%;font-size: 60px;line-height: 120px;perspective: 2000px}
+.sketchbook .sk-page{position: absolute;top:0;left:50%;width: 50%;z-index: 40;
+	-webkit-transform-origin:0 0;-moz-transform-origin:0 0;transform-origin:0 0;
 }
-
+.sketchbook .sk-page .sketchbook-page-bg{position: relative;width:100% !important;height:auto !important;display: block;}
 .sketchbook .sk-page:first-child{z-index: 41}
 .sketchbook .sk-page:first-child .sk-face:first-child{z-index: 42}
-
-.sketchbook .sk-page .sk-face{position: absolute;top:0;left:0;right:0;height: 550px;background-color: #FFF;border:solid 3px #CCC;z-index: 41}
-/*.sketchbook .sk-ring{position: absolute;top:-5px;bottom:-5px;left:50%;width:50px;margin-left: -25px;background-color: #AA9}*/
-
+.sketchbook .sk-page .sk-face{position: absolute;top:1%;left:14%;right:3%;bottom:1%;background: url('../img/sketchbook-face-bg.jpg');z-index: 41}
 /* Shadow Page */
 .sketchbook .sk-page .sk-shadow{position: absolute;top: 0;bottom: 0;left:0;right: 0;display: block;background-color: #000;opacity: 0}
 .sketchbook .sk-page.sk-over.sk-pos-center .sk-shadow{opacity: .6}
-
 /* Margin pagination */
-.sketchbook .sk-page .sk-face,
-.sketchbook .sk-page .sk-shadow{left:15px;}
-.sketchbook .sk-page.sk-left .sk-face,
-.sketchbook .sk-page.sk-left .sk-shadow{right:15px;left:0;}
-
+.sketchbook .sk-page .sk-face{left:6%;}
+.sketchbook .sk-page .sk-shadow{left:1.7%;}
+.sketchbook .sk-page{padding-left: .86%}
+.sketchbook .sk-page.sk-left .sk-face{right:6%;left:3%;}
+.sketchbook .sk-page.sk-left .sk-shadow{right:1.7%;left:0;}
+.sketchbook .sk-page.sk-left{padding-left: 0;padding-right: .86%}
 /* Z Positions */
 .sketchbook .sk-page.sk-left{left:0;}
 .sketchbook .sk-page.sk-visible{z-index: 42;}
@@ -47,51 +44,21 @@ h1{
 .sketchbook .sk-page.sk-over.sk-right-to-center .sk-face.face-front,
 .sketchbook .sk-page.sk-over.sk-left-to-center .sk-face.face-back{z-index: 48;}
 .sketchbook .sk-page.sk-over .sk-shadow{z-index: 49;}
-
 /* Angle Positions */
-.sketchbook .sk-page.sk-over.sk-pos-left{
-	-webkit-transform: rotateY(-180deg);
-	   -moz-transform: rotateY(-180deg);
-			transform: rotateY(-180deg);
-}
-.sketchbook .sk-page.sk-over.sk-pos-center{
-	-webkit-transform: rotateY(-90deg);
-	   -moz-transform: rotateY(-90deg);
-			transform: rotateY(-90deg);
-}
-.sketchbook .sk-page.sk-over.sk-pos-right{
-	-webkit-transform: rotateY(0deg);
-	   -moz-transform: rotateY(0deg);
-			transform: rotateY(0deg);
-}
-
+.sketchbook .sk-page.sk-over.sk-pos-left{-webkit-transform: rotateY(-180deg);-moz-transform: rotateY(-180deg);transform: rotateY(-180deg)}
+.sketchbook .sk-page.sk-over.sk-pos-center{-webkit-transform: rotateY(-90deg);-moz-transform: rotateY(-90deg);transform: rotateY(-90deg)}
+.sketchbook .sk-page.sk-over.sk-pos-right{-webkit-transform: rotateY(0deg);-moz-transform: rotateY(0deg);transform: rotateY(0deg)}
 /* Animations */
-.sketchbook .sk-page.sk-over.sk-animated1{
-	-webkit-transition : transform .6s cubic-bezier(.38,0,.76,.56);
-	   -moz-transition : transform .6s cubic-bezier(.38,0,.76,.56);
-			transition : transform .6s cubic-bezier(.38,0,.76,.56);
-}
-.sketchbook .sk-page.sk-over.sk-animated2{
-	-webkit-transition : transform .6s cubic-bezier(.24,.44,.62,1);
-	   -moz-transition : transform .6s cubic-bezier(.24,.44,.62,1);
-			transition : transform .6s cubic-bezier(.24,.44,.62,1);
-}
+.sketchbook .sk-page.sk-over.sk-animated1{-webkit-transition : transform .6s cubic-bezier(.38,0,.76,.56);-moz-transition : transform .6s cubic-bezier(.38,0,.76,.56);transition : transform .6s cubic-bezier(.38,0,.76,.56)}
+.sketchbook .sk-page.sk-over.sk-animated2{-webkit-transition : transform .6s cubic-bezier(.24,.44,.62,1);-moz-transition : transform .6s cubic-bezier(.24,.44,.62,1);transition : transform .6s cubic-bezier(.24,.44,.62,1);}
 /* shadow page animation */
-.sketchbook .sk-page .sk-shadow{
-	-webkit-transition : opacity 1.2s;
-	   -moz-transition : opacity 1.2s;
-			transition : opacity 1.2s;
-}
-
+.sketchbook .sk-page .sk-shadow{-webkit-transition : opacity 1.2s;-moz-transition : opacity 1.2s;transition : opacity 1.2s;}
 /* Flip back face */
-.sketchbook .sk-page.sk-over.sk-left-to-center .sk-face.face-back{
-	-webkit-transform: rotateY(180deg);
-	   -moz-transform: rotateY(180deg);
-			transform: rotateY(180deg);
-}
-
+.sketchbook .sk-page.sk-over.sk-left-to-center .sk-face.face-back,
+.sketchbook .sk-page.sk-left .sketchbook-page-bg{-webkit-transform: rotateY(180deg);-moz-transform: rotateY(180deg);transform: rotateY(180deg);}
 /* Controls */
-.sketchbook .sk-btn{position: absolute;top:0;bottom:0;width:50px;background-color: #BBB;cursor:pointer;}
-.sketchbook .sk-btn.disabled{cursor:default;opacity: .3}
-.sketchbook .sk-btn.sk-btn-prev{left:-50px;}
-.sketchbook .sk-btn.sk-btn-next{right:-50px;}
+.sketchbook .sk-btn{position: absolute;z-index:50;top:50%;width:2.8%;height:9%;margin-top:-2.6%;cursor:pointer;background:  url('../img/sketchbook-arrows.png') no-repeat;background-size: 62%;opacity: .7}
+.sketchbook .sk-btn.disabled{opacity: .1}
+.sketchbook .sk-btn:hover{opacity: 1}
+.sketchbook .sk-btn.sk-btn-prev{left:-1.4%;border-radius: 5% 55% 55% 5%;background-position: center -103%}
+.sketchbook .sk-btn.sk-btn-next{right:-1.4%;border-radius: 55% 5% 5% 55%;background-position: center 192%}
